@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'autenticacion/singin.dart';
+import 'package:camci/autenticacion/singin.dart';
 
 void main() => runApp(MyApp());
 
