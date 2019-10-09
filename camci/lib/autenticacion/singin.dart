@@ -7,6 +7,7 @@ class Signin extends StatelessWidget{
       body: Stack(
         children: <Widget>[
           background(),
+          formulario(),
         ],
       ),
     );
@@ -17,8 +18,52 @@ class Signin extends StatelessWidget{
       height: double.maxFinite,
       width: double.maxFinite,
       decoration: BoxDecoration(
-        color: Colors.amberAccent
+        color: Colors.white
       ),
+    );
+  }
+  Widget formulario(){
+    return Container(
+      child: Center(
+        child: Container(
+          width: 250,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+
+              TextField(
+                decoration: InputDecoration(hintText: "Email"),
+              ),
+              TextField(
+                decoration: InputDecoration(hintText: "Contraseña"),
+                obscureText: true,
+              ),
+              FlatButton(
+                child: Text("Iniciar Sesión"),
+                color:Color(0xFFEAB447),
+                onPressed: () {},
+
+              ),
+              SizedBox(
+                height: 80,
+
+              ),
+              FlatButton(
+                child: Text("Iniciar Sesión Con Google"),
+                color: Colors.red,
+                onPressed: () {},
+              ),
+              FlatButton(
+                child: Text("Iniciar Sesión Con Facebook"),
+                color: Colors.blueAccent,
+                onPressed: () {},
+              ),
+            ],
+          ),
+        ),
+      ),
+
     );
   }
 
