@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 class Signin extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
@@ -13,6 +14,18 @@ class Signin extends StatelessWidget{
     );
 
   }
+  Widget logo() {
+    var assetsImage = new AssetImage('imagenes/logo.png');
+    var image = new Image(image: assetsImage,width: 80.0,height: 80.0,);
+    return Container(
+        child: Center(
+          child: image,
+        ));
+
+  }
+
+
+
   Widget background(){
     return Container(
       height: double.maxFinite,
@@ -31,6 +44,13 @@ class Signin extends StatelessWidget{
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              logo(),
+              FlatButton(
+                child: Text("CAMCI"),
+                color: Colors.white,
+
+              ),
+
 
               TextField(
                 decoration: InputDecoration(hintText: "Email"),
@@ -46,7 +66,7 @@ class Signin extends StatelessWidget{
 
               ),
               SizedBox(
-                height: 80,
+                height: 70,
 
               ),
               FlatButton(
