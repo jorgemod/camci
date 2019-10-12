@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:camci/autenticacion/singup.dart';
+import 'package:camci/autenticacion/principal.dart';
 import 'package:camci/main/principal.dart';
 
 void main() => runApp(MyApp());
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       ),
       home: Singup(),
       routes: {
-        "/principal": (_) => new Principal(),
+        "/principal": (_) => new principal(),
       },
     );
   }
