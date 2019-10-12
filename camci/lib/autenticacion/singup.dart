@@ -1,28 +1,37 @@
 import 'package:flutter/material.dart';
+import 'package:camci/main/principal.dart';
 
 class Singup extends StatelessWidget {
 
 //  nombre, quizá un correo , numero de celular? , direccion?
 
-  Widget fromulario() {
+  Widget form(BuildContext context) {
     return Container(
+      padding: EdgeInsets.all(30),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Text("Nombre"),
           TextField(
             decoration: InputDecoration(hintText: "nombre"),
           ),
-          Text("Quizás un correo"),
           TextField(
             decoration: InputDecoration(hintText: "Correo"),
           ),
-          Text("Número celular?"),
           TextField(
-            decoration: InputDecoration(hintText: "Número?"),
+            decoration: InputDecoration(hintText: "Número de celular?"),
           ),
-          Text("Dirección?"),
           TextField(
             decoration: InputDecoration(hintText: "Dirección?"),
+          ),
+          SizedBox(
+            height: 70,
+          ),
+          FlatButton(
+            child: Text("Registrarse"),
+            onPressed: () {
+              Navigator.pushReplacementNamed(context, "/principal");
+            },
           ),
         ],
       ),
@@ -31,7 +40,9 @@ class Singup extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return null;
+    return Scaffold(
+      body: form(context),
+    );
   }
 
 }
