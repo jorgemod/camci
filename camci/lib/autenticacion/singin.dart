@@ -24,6 +24,16 @@ class Signin extends StatelessWidget{
 
   }
 
+  Widget logofbk() {
+    var assetsImage = new AssetImage('imagenes/facebook.png');
+    var image = new Image(image: assetsImage,width: 30.0,height: 30.0,);
+    return Container(
+        child: Center(
+          child: image,
+        ));
+
+  }
+
 
 
   Widget background(){
@@ -74,11 +84,13 @@ class Signin extends StatelessWidget{
                 color: Colors.red,
                 onPressed: () {},
               ),
+
               FlatButton(
-                child: Text("Iniciar Sesión Con Facebook"),
-                color: Colors.blueAccent,
-                onPressed: () {},
+                  child: Text("Iniciar Sesión Con Facebook"),
+                  color: Colors.blueAccent,
+                  onPressed: () {},
               ),
+
             ],
           ),
         ),
