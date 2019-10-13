@@ -19,10 +19,10 @@ class Singup extends StatelessWidget {
             decoration: InputDecoration(hintText: "Correo"),
           ),
           TextField(
-            decoration: InputDecoration(hintText: "Número de celular?"),
+            decoration: InputDecoration(hintText: "Número de celular"),
           ),
           TextField(
-            decoration: InputDecoration(hintText: "Dirección?"),
+            decoration: InputDecoration(hintText: "Dirección"),
           ),
           SizedBox(
             height: 70,

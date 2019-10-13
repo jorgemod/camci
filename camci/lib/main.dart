@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:camci/autenticacion/singin.dart';
 import 'package:camci/autenticacion/singup.dart';
 import 'package:camci/autenticacion/principal.dart';
 import 'package:camci/main/principal.dart';
@@ -16,10 +17,12 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: Singup(),
+      home: principal(),
       routes: {
-        "/principal": (_) => new principal(),
+        "/singin": (_) => new Signin(),
+        "/singup": (_) => new Singup()
       },
     );
   }
 }
+
