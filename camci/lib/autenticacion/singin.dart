@@ -8,7 +8,7 @@ class Signin extends StatelessWidget{
       body: Stack(
         children: <Widget>[
           background(),
-          formulario(),
+          formulario(context),
         ],
       ),
     );
@@ -45,7 +45,7 @@ class Signin extends StatelessWidget{
       ),
     );
   }
-  Widget formulario(){
+  Widget formulario(context){
     return Container(
       child: Center(
         child: Container(
@@ -71,8 +71,10 @@ class Signin extends StatelessWidget{
               ),
               FlatButton(
                 child: Text("Iniciar Sesión"),
-                color:Color(0xFFEAB447),
-                onPressed: () {},
+                color:Colors.amberAccent,
+                onPressed: (){
+                  Navigator.pushReplacementNamed(context, "/main");
+                },
 
               ),
               SizedBox(

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class Principal extends StatelessWidget {
   Widget items() {
-    final image1 = new AssetImage('imagenes/facebook.png');
-    final image2 = new AssetImage('imagenes/logo.png');
+    final image1 = new AssetImage('imagenes/productos/aguacate1.png');
+    final image2 = new AssetImage('imagenes/productos/fresas1.png');
     final precio1 = "10";
     final precio2 = "30";
 
@@ -91,14 +91,14 @@ class Principal extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Icon(Icons.search),
-            Text("No presionar );"),
+            Text("Buscar"),
           ],
         ),
         margin: EdgeInsets.only(top: 55, bottom: 15, left: 15, right: 15),
         padding: EdgeInsets.only(left: 10, right: 10),
         color: Colors.white,
       ),
-      color: Colors.yellow,
+      color: Colors.green,
     );
 
     return Scaffold(
@@ -112,7 +112,7 @@ class Principal extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 searchBar,
-                Text("lorem ipsum dolor"),
+                Text("PRODUCTOS"),
                 Container(
                   height:475,
                   child: ListView(
