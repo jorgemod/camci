@@ -35,6 +35,38 @@ class Signin extends StatelessWidget{
   }
 
 
+  final fb = new AssetImage('imagenes/sn/facebook.png');
+  final gl = new AssetImage('imagenes/sn/gmail.png');
+
+  Widget boton(AssetImage img, String str, BuildContext context){
+    return InkWell(
+      child: Container(
+        height: 50,
+        margin: EdgeInsets.all(10),
+        padding: EdgeInsets.all(15),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            Text("Iniciar con "+ str),
+            Image(image: img,)
+          ],
+        ),
+        decoration: BoxDecoration(
+            borderRadius: new BorderRadius.all(Radius.circular(8.0)),
+            color: Colors.white,
+            boxShadow: <BoxShadow>[
+              new BoxShadow(
+                  color: Colors.black12,
+                  blurRadius: 10.0,
+                  offset: new Offset(0.0, 10.0))
+            ]),
+      ),
+      onTap: () {
+        Navigator.pushReplacementNamed(context, "/main");
+      },
+    );
+  }
+
 
   Widget background(){
     return Container(
@@ -45,7 +77,7 @@ class Signin extends StatelessWidget{
       ),
     );
   }
-  Widget formulario(context){
+  Widget formulario(BuildContext context){
     return Container(
       child: Center(
         child: Container(
@@ -58,10 +90,7 @@ class Signin extends StatelessWidget{
               FlatButton(
                 child: Text("CAMCI"),
                 color: Colors.white,
-
               ),
-
-
               TextField(
                 decoration: InputDecoration(hintText: "Email"),
               ),
@@ -75,25 +104,12 @@ class Signin extends StatelessWidget{
                 onPressed: (){
                   Navigator.pushReplacementNamed(context, "/main");
                 },
-
               ),
               SizedBox(
                 height: 70,
-
               ),
-              FlatButton(
-                child: Text("Iniciar Sesión Con Google"),
-                color: Colors.red,
-                onPressed: () {
-
-                },
-              ),
-
-              FlatButton(
-                  child: Text("Iniciar Sesión Con Facebook"),
-                  color: Colors.blueAccent,
-                  onPressed: () {},
-              ),
+              boton(fb, "Facebook", context),
+              boton(gl, "Google", context),
 
             ],
           ),

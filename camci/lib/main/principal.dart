@@ -215,7 +215,7 @@ class Principal extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
                 InkWell(
-                  child: Icon(Icons.home),
+                  child: Icon(Icons.home, color: Colors.green,),
                   onTap: () {
                     //TODO
                     print("tapped");

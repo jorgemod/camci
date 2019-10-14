@@ -89,7 +89,7 @@ class Cart extends StatelessWidget {
           actions: <Widget>[
             // usually buttons at the bottom of the dialog
             new FlatButton(
-              child: new Text("Pagar"),
+              child: new Text("Pagar", style: TextStyle(fontSize: 20),),
               onPressed: () {
                 Navigator.push(
                   context,
