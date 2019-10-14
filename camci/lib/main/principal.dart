@@ -3,57 +3,76 @@ import 'cart.dart';
 
 class Principal extends StatelessWidget {
 
-  final image1 = new AssetImage('imagenes/productos/aguacate1.png');
-  final image2 = new AssetImage('imagenes/productos/aguacate2.png');
-  final image3 = new AssetImage('imagenes/productos/aguacate3.png');
-  final image4 = new AssetImage('imagenes/productos/aguacate4.png');
-  final image5 = new AssetImage('imagenes/productos/durazno1.png');
-  final image6 = new AssetImage('imagenes/productos/durazno2.png');
-  final image7 = new AssetImage('imagenes/productos/durazno3.png');
-  final image8 = new AssetImage('imagenes/productos/durazno4.png');
-  final image9 = new AssetImage('imagenes/productos/durazno5.png');
-  final image10 = new AssetImage('imagenes/productos/fresas1.png');
-  final image11 = new AssetImage('imagenes/productos/fresas2.png');
-  final image12 = new AssetImage('imagenes/productos/fresas3.png');
-  final image13 = new AssetImage('imagenes/productos/fresas4.png');
-  final image14 = new AssetImage('imagenes/productos/fresas5.png');
-  final image15 = new AssetImage('imagenes/productos/jitomate1.png');
-  final image16 = new AssetImage('imagenes/productos/jitomate2.png');
-  final image17 = new AssetImage('imagenes/productos/lechuga1.png');
-  final image18 = new AssetImage('imagenes/productos/lechuga2.png');
-  final image19 = new AssetImage('imagenes/productos/lechuga3.png');
-  final image20 = new AssetImage('imagenes/productos/lechuga4.png');
-  final image21 = new AssetImage('imagenes/productos/limon1.png');
-  final image22 = new AssetImage('imagenes/productos/limon3.png');
-  final image23 = new AssetImage('imagenes/productos/limon4.png');
-  final image24 = new AssetImage('imagenes/productos/limon5.png');
-  final image25 = new AssetImage('imagenes/productos/manzana1.png');
-  final image26 = new AssetImage('imagenes/productos/manzana2.png');
-  final image27 = new AssetImage('imagenes/productos/manzana3.png');
-  final image28 = new AssetImage('imagenes/productos/manzana4.png');
-  final image29 = new AssetImage('imagenes/productos/naranjas1.png');
-  final image30 = new AssetImage('imagenes/productos/naranjas2.png');
-  final image31 = new AssetImage('imagenes/productos/naranjas3.png');
-  final image32 = new AssetImage('imagenes/productos/papa1.png');
-  final image33 = new AssetImage('imagenes/productos/papa2.png');
-  final image34 = new AssetImage('imagenes/productos/pepinos1.png');
-  final image35 = new AssetImage('imagenes/productos/pepinos2.png');
-  final image36 = new AssetImage('imagenes/productos/pepinos3.png');
-  final image37 = new AssetImage('imagenes/productos/pimiento2.png');
-  final image38 = new AssetImage('imagenes/productos/pimientos1.png');
-  final image39 = new AssetImage('imagenes/productos/pimientos3.png');
-  final image40 = new AssetImage('imagenes/productos/platanos1.png');
-  final image41 = new AssetImage('imagenes/productos/platanos2.png');
-  final image42 = new AssetImage('imagenes/productos/platanos3.png');
-  final image43 = new AssetImage('imagenes/productos/platanos4.png');
-  final image44 = new AssetImage('imagenes/productos/tomate1.png');
-  final image45 = new AssetImage('imagenes/productos/tomate2.png');
-  final image46 = new AssetImage('imagenes/productos/zanahoria1.png');
-  final image47 = new AssetImage('imagenes/productos/zanahoria2.png');
-  final image48 = new AssetImage('imagenes/productos/zanahoria3.png');
+  var imagenes = [
+    AssetImage('imagenes/productos/aguacate1.png'),
+    AssetImage('imagenes/productos/aguacate2.png'),
+    AssetImage('imagenes/productos/aguacate3.png'),
+    AssetImage('imagenes/productos/aguacate4.png'),
+    AssetImage('imagenes/productos/durazno1.png'),
+    AssetImage('imagenes/productos/durazno2.png'),
+    AssetImage('imagenes/productos/durazno3.png'),
+    AssetImage('imagenes/productos/durazno4.png'),
+    AssetImage('imagenes/productos/durazno5.png'),
+    AssetImage('imagenes/productos/fresas1.png'),
+    AssetImage('imagenes/productos/fresas2.png'),
+    AssetImage('imagenes/productos/fresas3.png'),
+    AssetImage('imagenes/productos/fresas4.png'),
+    AssetImage('imagenes/productos/fresas5.png'),
+    AssetImage('imagenes/productos/jitomate1.png'),
+    AssetImage('imagenes/productos/jitomate2.png'),
+    AssetImage('imagenes/productos/lechuga1.png'),
+    AssetImage('imagenes/productos/lechuga2.png'),
+    AssetImage('imagenes/productos/lechuga3.png'),
+    AssetImage('imagenes/productos/lechuga4.png'),
+    AssetImage('imagenes/productos/limon1.png'),
+    AssetImage('imagenes/productos/limon3.png'),
+    AssetImage('imagenes/productos/limon4.png'),
+    AssetImage('imagenes/productos/limon5.png'),
+    AssetImage('imagenes/productos/manzana1.png'),
+    AssetImage('imagenes/productos/manzana2.png'),
+    AssetImage('imagenes/productos/manzana3.png'),
+    AssetImage('imagenes/productos/manzana4.png'),
+    AssetImage('imagenes/productos/naranjas1.png'),
+    AssetImage('imagenes/productos/naranjas2.png'),
+    AssetImage('imagenes/productos/naranjas3.png'),
+    AssetImage('imagenes/productos/papa1.png'),
+    AssetImage('imagenes/productos/papa2.png'),
+    AssetImage('imagenes/productos/pepinos1.png'),
+    AssetImage('imagenes/productos/pepinos2.png'),
+    AssetImage('imagenes/productos/pepinos3.png'),
+    AssetImage('imagenes/productos/pimiento2.png'),
+    AssetImage('imagenes/productos/pimientos1.png'),
+    AssetImage('imagenes/productos/pimientos3.png'),
+    AssetImage('imagenes/productos/platanos1.png'),
+    AssetImage('imagenes/productos/platanos2.png'),
+    AssetImage('imagenes/productos/platanos3.png'),
+    AssetImage('imagenes/productos/platanos4.png'),
+    AssetImage('imagenes/productos/tomate1.png'),
+    AssetImage('imagenes/productos/tomate2.png'),
+    AssetImage('imagenes/productos/zanahoria1.png'),
+    AssetImage('imagenes/productos/zanahoria2.png'),
+    AssetImage('imagenes/productos/zanahoria3.png'),
+  ];
+
+
+
+  Widget itemsList() {
+    items(image1, image2),
+
+  }
+
+
+
+
+
+
+
+
+
+
+
 
   Widget items(AssetImage img1, AssetImage img2) {
-
     final precio1 = "10";
     final precio2 = "30";
 
@@ -153,8 +172,7 @@ class Principal extends StatelessWidget {
               color: Colors.black12,
               blurRadius: 10.0,
               offset: new Offset(0.0, 10.0))
-        ])
-    );
+        ]));
 
     return Scaffold(
         body: Container(
@@ -163,50 +181,28 @@ class Principal extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-                searchBar,
-                SizedBox(
-                  height: 15,
-                ),
-                Text(
-                  "PRODUCTOS",
-                  style: TextStyle(fontSize: 20),
-                ),
-                SizedBox(
-                  height: 5,
-                ),
+          searchBar,
+          SizedBox(
+            height: 15,
+          ),
+          Text(
+            "PRODUCTOS",
+            style: TextStyle(fontSize: 20),
+          ),
+          SizedBox(
+            height: 5,
+          ),
           Flexible(
             child: ListView(
               scrollDirection: Axis.vertical,
               shrinkWrap: true,
               children: <Widget>[
-                items(image1, image2),
-                items(image3, image4),
-                items(image5, image6),
-                items(image7, image8),
-                items(image9, image10),
-                items(image11, image12),
-                items(image13, image14),
-                items(image15, image16),
-                items(image17, image18),
-                items(image19, image20),
-                items(image21, image22),
-                items(image23, image24),
-                items(image25, image28),
-                items(image29, image30),
-                items(image31, image32),
-                items(image33, image34),
-                items(image35, image36),
-                items(image37, image38),
-                items(image39, image40),
-                items(image41, image42),
-                items(image43, image44),
-                items(image45, image46),
-                items(image47, image48),
+
+
 
               ],
             ),
           ),
-
           Container(
             color: Colors.white70,
             height: 60,
@@ -215,7 +211,10 @@ class Principal extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
                 InkWell(
-                  child: Icon(Icons.home, color: Colors.green,),
+                  child: Icon(
+                    Icons.home,
+                    color: Colors.green,
+                  ),
                   onTap: () {
                     //TODO
                     print("tapped");
