@@ -1,11 +1,23 @@
 import 'package:flutter/material.dart';
 
 class Pago extends StatelessWidget {
-  Widget body() {
-    Widget method(String method) {
+
+  final pp = new AssetImage('imagenes/pagos/paypal.png');
+
+  final cc = new AssetImage('imagenes/pagos/mastercard.png');
+
+  final ef = new AssetImage('imagenes/pagos/money.png');
+
+  Widget body(BuildContext context) {
+    Widget method(String method, AssetImage img) {
       return InkWell(
+        onTap: () {
+          Navigator.of(context).pop();
+          Navigator.of(context).pop();
+        },
         child: Container(
           margin: EdgeInsets.all(10),
+          padding: EdgeInsets.all(10),
           decoration: BoxDecoration(
               borderRadius: new BorderRadius.all(Radius.circular(8.0)),
               color: Colors.white,
@@ -17,10 +29,16 @@ class Pago extends StatelessWidget {
               ]),
           height: 100,
           child: Center(
-            child: Text(
-              method,
-              style: TextStyle(fontWeight: FontWeight.w500, fontSize: 30),
-            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+              Image(image: img,),
+              Text(
+                method,
+                style: TextStyle(fontWeight: FontWeight.w500, fontSize: 30),
+              ),
+            ],)
           ),
         ),
       );
@@ -33,9 +51,9 @@ class Pago extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          method("Efectivo"),
-          method("PayPal"),
-          method("Tarjeta"),
+          method("Efectivo", ef),
+          method("PayPal", pp),
+          method("Tarjeta", cc),
         ],
       ),
     );
@@ -47,7 +65,7 @@ class Pago extends StatelessWidget {
       appBar: AppBar(
         title: Text("Pago"),
       ),
-      body: body(),
+      body: body(context),
     );
   }
 }

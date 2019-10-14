@@ -52,7 +52,7 @@ class Principal extends StatelessWidget {
   final image47 = new AssetImage('imagenes/productos/zanahoria2.png');
   final image48 = new AssetImage('imagenes/productos/zanahoria3.png');
 
-  Widget items() {
+  Widget items(AssetImage img1, AssetImage img2) {
 
     final precio1 = "10";
     final precio2 = "30";
@@ -75,7 +75,7 @@ class Principal extends StatelessWidget {
           children: <Widget>[
             Container(
               height: 140,
-              child: Image(image: image1),
+              child: Image(image: img1),
             ),
             Text("Desc 1"),
             Text("Desc 1"),
@@ -101,7 +101,7 @@ class Principal extends StatelessWidget {
           children: <Widget>[
             Container(
               height: 140,
-              child: Image(image: image2),
+              child: Image(image: img2),
             ),
             Text("Desc 2"),
             Text("Desc 2"),
@@ -179,12 +179,30 @@ class Principal extends StatelessWidget {
               scrollDirection: Axis.vertical,
               shrinkWrap: true,
               children: <Widget>[
-                items(),
-                items(),
-                items(),
-                items(),
-                items(),
-                items(),
+                items(image1, image2),
+                items(image3, image4),
+                items(image5, image6),
+                items(image7, image8),
+                items(image9, image10),
+                items(image11, image12),
+                items(image13, image14),
+                items(image15, image16),
+                items(image17, image18),
+                items(image19, image20),
+                items(image21, image22),
+                items(image23, image24),
+                items(image25, image28),
+                items(image29, image30),
+                items(image31, image32),
+                items(image33, image34),
+                items(image35, image36),
+                items(image37, image38),
+                items(image39, image40),
+                items(image41, image42),
+                items(image43, image44),
+                items(image45, image46),
+                items(image47, image48),
+
               ],
             ),
           ),

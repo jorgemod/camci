@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'pasarela.dart';
 
 class Cart extends StatelessWidget {
+
+  var empty = false;
+
   final image1 = new AssetImage('imagenes/productos/aguacate1.png');
 
   Widget item() {
@@ -53,10 +56,7 @@ class Cart extends StatelessWidget {
             shrinkWrap: true,
             children: <Widget>[
               item(),
-              item(),
-              item(),
-              item(),
-              item(),
+
             ],
           ),
         ),
@@ -69,7 +69,7 @@ class Cart extends StatelessWidget {
               child: Text("Pagar"),
             ),
           ),
-          onTap: (){
+          onTap: () {
             _showDialog(context);
           },
         ),
@@ -95,6 +95,7 @@ class Cart extends StatelessWidget {
                   context,
                   MaterialPageRoute(builder: (context) => Pago()),
                 );
+                empty = true;
               },
             ),
             new FlatButton(
@@ -111,12 +112,20 @@ class Cart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Carrito"),
-      ),
-      body: lleno(context),
-    );
+    if (!empty) {
+      return Scaffold(
+        appBar: AppBar(
+          title: Text("Carrito"),
+        ),
+        body: lleno(context),
+      );
+    } else {
+      return Scaffold(
+        appBar: AppBar(
+          title: Text("Carrito"),
+        ),
+        body: vacio(),
+      );
+    }
   }
 }
