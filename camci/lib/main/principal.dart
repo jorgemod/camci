@@ -2,9 +2,18 @@ import 'package:flutter/material.dart';
 import 'cart.dart';
 
 class Principal extends StatelessWidget {
+  final image1 = new AssetImage('imagenes/productos/aguacate1.png');
+  final image2 = new AssetImage('imagenes/productos/aguacate2.png');
+  final image3 = new AssetImage('imagenes/productos/aguacate3.png');
+  final image4 = new AssetImage('imagenes/productos/aguacate4.png');
+  final image5 = new AssetImage('imagenes/productos/durazno1.png');
+  final image6 = new AssetImage('imagenes/productos/durazno2.png');
+  final image7 = new AssetImage('imagenes/productos/durazno3.png');
+  final image8 = new AssetImage('imagenes/productos/durazno4.png');
+  final image9 = new AssetImage('imagenes/productos/durazno5.png');
+
   Widget items() {
-    final image1 = new AssetImage('imagenes/productos/aguacate1.png');
-    final image2 = new AssetImage('imagenes/productos/fresas1.png');
+
     final precio1 = "10";
     final precio2 = "30";
 
