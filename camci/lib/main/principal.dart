@@ -64,7 +64,20 @@ class Principal extends StatelessWidget {
       height: 220,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[item1, item2],
+        children: <Widget>[
+          InkWell(
+            child: item1,
+            onTap: () {
+              print("item1");
+            },
+          ),
+          InkWell(
+            child: item2,
+            onTap: () {
+              print("item2");
+            },
+          ),
+        ],
       ),
     );
   }
@@ -72,21 +85,21 @@ class Principal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final searchBar = Container(
-      height: 110,
-      width: double.maxFinite,
-      child: Container(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            Icon(Icons.search),
-            Text("Buscar"),
-          ],
+        height: 110,
+        width: double.maxFinite,
+        child: Container(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Icon(Icons.search),
+              Text("Buscar"),
+            ],
+          ),
+          margin: EdgeInsets.only(top: 55, bottom: 15, left: 15, right: 15),
+          padding: EdgeInsets.only(left: 10, right: 10),
+          color: Colors.white,
         ),
-        margin: EdgeInsets.only(top: 55, bottom: 15, left: 15, right: 15),
-        padding: EdgeInsets.only(left: 10, right: 10),
-        color: Colors.white,
-      ),
-      decoration: BoxDecoration(color: Colors.green, boxShadow: <BoxShadow>[
+        decoration: BoxDecoration(color: Colors.green, boxShadow: <BoxShadow>[
           new BoxShadow(
               color: Colors.black12,
               blurRadius: 10.0,
@@ -101,29 +114,32 @@ class Principal extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          Container(
-            child: Column(
-              children: <Widget>[
                 searchBar,
-                SizedBox(height: 15,),
-                Text("PRODUCTOS", style: TextStyle(fontSize: 20),),
-                SizedBox(height: 5,),
-                Container(
-                  height: 470,
-                  child: ListView(
-                    scrollDirection: Axis.vertical,
-                    children: <Widget>[
-                      items(),
-                      items(),
-                      items(),
-                      items(),
-                      items(),
-                    ],
-                  ),
-                )
+                SizedBox(
+                  height: 15,
+                ),
+                Text(
+                  "PRODUCTOS",
+                  style: TextStyle(fontSize: 20),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+          Flexible(
+            child: ListView(
+              scrollDirection: Axis.vertical,
+              shrinkWrap: true,
+              children: <Widget>[
+                items(),
+                items(),
+                items(),
+                items(),
+                items(),
+                items(),
               ],
             ),
           ),
+
           Container(
             color: Colors.white70,
             height: 60,
