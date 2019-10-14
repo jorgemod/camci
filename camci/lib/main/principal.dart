@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'cart.dart';
 
 class Principal extends StatelessWidget {
+
   final image1 = new AssetImage('imagenes/productos/aguacate1.png');
   final image2 = new AssetImage('imagenes/productos/aguacate2.png');
   final image3 = new AssetImage('imagenes/productos/aguacate3.png');
@@ -11,6 +12,45 @@ class Principal extends StatelessWidget {
   final image7 = new AssetImage('imagenes/productos/durazno3.png');
   final image8 = new AssetImage('imagenes/productos/durazno4.png');
   final image9 = new AssetImage('imagenes/productos/durazno5.png');
+  final image10 = new AssetImage('imagenes/productos/fresas1.png');
+  final image11 = new AssetImage('imagenes/productos/fresas2.png');
+  final image12 = new AssetImage('imagenes/productos/fresas3.png');
+  final image13 = new AssetImage('imagenes/productos/fresas4.png');
+  final image14 = new AssetImage('imagenes/productos/fresas5.png');
+  final image15 = new AssetImage('imagenes/productos/jitomate1.png');
+  final image16 = new AssetImage('imagenes/productos/jitomate2.png');
+  final image17 = new AssetImage('imagenes/productos/lechuga1.png');
+  final image18 = new AssetImage('imagenes/productos/lechuga2.png');
+  final image19 = new AssetImage('imagenes/productos/lechuga3.png');
+  final image20 = new AssetImage('imagenes/productos/lechuga4.png');
+  final image21 = new AssetImage('imagenes/productos/limon1.png');
+  final image22 = new AssetImage('imagenes/productos/limon3.png');
+  final image23 = new AssetImage('imagenes/productos/limon4.png');
+  final image24 = new AssetImage('imagenes/productos/limon5.png');
+  final image25 = new AssetImage('imagenes/productos/manzana1.png');
+  final image26 = new AssetImage('imagenes/productos/manzana2.png');
+  final image27 = new AssetImage('imagenes/productos/manzana3.png');
+  final image28 = new AssetImage('imagenes/productos/manzana4.png');
+  final image29 = new AssetImage('imagenes/productos/naranjas1.png');
+  final image30 = new AssetImage('imagenes/productos/naranjas2.png');
+  final image31 = new AssetImage('imagenes/productos/naranjas3.png');
+  final image32 = new AssetImage('imagenes/productos/papa1.png');
+  final image33 = new AssetImage('imagenes/productos/papa2.png');
+  final image34 = new AssetImage('imagenes/productos/pepinos1.png');
+  final image35 = new AssetImage('imagenes/productos/pepinos2.png');
+  final image36 = new AssetImage('imagenes/productos/pepinos3.png');
+  final image37 = new AssetImage('imagenes/productos/pimiento2.png');
+  final image38 = new AssetImage('imagenes/productos/pimientos1.png');
+  final image39 = new AssetImage('imagenes/productos/pimientos3.png');
+  final image40 = new AssetImage('imagenes/productos/platanos1.png');
+  final image41 = new AssetImage('imagenes/productos/platanos2.png');
+  final image42 = new AssetImage('imagenes/productos/platanos3.png');
+  final image43 = new AssetImage('imagenes/productos/platanos4.png');
+  final image44 = new AssetImage('imagenes/productos/tomate1.png');
+  final image45 = new AssetImage('imagenes/productos/tomate2.png');
+  final image46 = new AssetImage('imagenes/productos/zanahoria1.png');
+  final image47 = new AssetImage('imagenes/productos/zanahoria2.png');
+  final image48 = new AssetImage('imagenes/productos/zanahoria3.png');
 
   Widget items() {
 
