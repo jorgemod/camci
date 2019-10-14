@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'pasarela.dart';
 
 class Cart extends StatelessWidget {
   final image1 = new AssetImage('imagenes/productos/aguacate1.png');
@@ -90,7 +91,10 @@ class Cart extends StatelessWidget {
             new FlatButton(
               child: new Text("Pagar"),
               onPressed: () {
-                Navigator.of(context).pop();
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Pago()),
+                );
               },
             ),
             new FlatButton(
