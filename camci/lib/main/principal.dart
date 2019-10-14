@@ -3,7 +3,7 @@ import 'cart.dart';
 
 class Principal extends StatelessWidget {
   var precios = [
-    "\$45",
+    "Aguacate\n\$45",
     "\$40",
     "\$47",
     "\$46",
@@ -52,11 +52,6 @@ class Principal extends StatelessWidget {
     "\$12",
     "\$15",
     "\$13",
-
-
-
-
-
   ];
 
   var imagenes = [
@@ -116,24 +111,14 @@ class Principal extends StatelessWidget {
     List<Widget> i = [];
 
     for (var j = 0; j < imagenes.length; j+=2) {
-      i.add(items(imagenes[j], imagenes[j+1]));
+      i.add(items(imagenes[j], precios[j], imagenes[j+1], precios[j+1], j));
     }
     return i;
 
   }
 
 
-
-
-
-
-
-
-
-
-
-
-  Widget items(AssetImage img1, AssetImage img2) {
+  Widget items(AssetImage img1, String pr1, AssetImage img2, String pr2, int index) {
     final precio1 = "10";
     final precio2 = "30";
 
@@ -157,9 +142,7 @@ class Principal extends StatelessWidget {
               height: 140,
               child: Image(image: img1),
             ),
-            Text("Desc 1"),
-            Text("Desc 1"),
-            Text(precio1),
+            Text(pr1, style: TextStyle( fontSize: 18,),textAlign: TextAlign.center,),
           ],
         ));
 
@@ -183,9 +166,7 @@ class Principal extends StatelessWidget {
               height: 140,
               child: Image(image: img2),
             ),
-            Text("Desc 2"),
-            Text("Desc 2"),
-            Text(precio2),
+            Text(pr2, style: TextStyle( fontSize: 18), textAlign: TextAlign.center,),
           ],
         ));
 
