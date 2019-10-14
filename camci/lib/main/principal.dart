@@ -3,8 +3,8 @@ import 'cart.dart';
 
 class Principal extends StatelessWidget {
   Widget items() {
-    final image1 = new AssetImage('imagenes/facebook.png');
-    final image2 = new AssetImage('imagenes/logo.png');
+    final image1 = new AssetImage('imagenes/productos/aguacate1.png');
+    final image2 = new AssetImage('imagenes/productos/fresas1.png');
     final precio1 = "10";
     final precio2 = "30";
 
@@ -72,26 +72,27 @@ class Principal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final searchBar = Container(
-        height: 110,
-        width: double.maxFinite,
-        child: Container(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              Icon(Icons.search),
-              Text("No presionar );"),
-            ],
-          ),
-          margin: EdgeInsets.only(top: 55, bottom: 15, left: 15, right: 15),
-          padding: EdgeInsets.only(left: 10, right: 10),
-          color: Colors.white,
+      height: 110,
+      width: double.maxFinite,
+      child: Container(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Icon(Icons.search),
+            Text("Buscar"),
+          ],
         ),
-        decoration: BoxDecoration(color: Colors.yellow, boxShadow: <BoxShadow>[
+        margin: EdgeInsets.only(top: 55, bottom: 15, left: 15, right: 15),
+        padding: EdgeInsets.only(left: 10, right: 10),
+        color: Colors.white,
+      ),
+      decoration: BoxDecoration(color: Colors.green, boxShadow: <BoxShadow>[
           new BoxShadow(
               color: Colors.black12,
               blurRadius: 10.0,
               offset: new Offset(0.0, 10.0))
-        ]));
+        ])
+    );
 
     return Scaffold(
         body: Container(
@@ -105,7 +106,7 @@ class Principal extends StatelessWidget {
               children: <Widget>[
                 searchBar,
                 SizedBox(height: 15,),
-                Text("lorem ipsum dolor", style: TextStyle(fontSize: 20),),
+                Text("PRODUCTOS", style: TextStyle(fontSize: 20),),
                 SizedBox(height: 5,),
                 Container(
                   height: 470,

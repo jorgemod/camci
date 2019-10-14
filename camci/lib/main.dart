@@ -17,12 +17,13 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.yellow,
       ),
-      home: Principal(),
-//      home: principal(),
+ //     home: Principal(),
+     home: principal(),
       routes: {
         "/singin": (_) => new Signin(),
         "/singup": (_) => new Singup(),
-        "/main": (_) => new Principal()
+        "/main": (_) => new Principal(),
+        "/principal": (_) => new principal()
       },
     );
   }

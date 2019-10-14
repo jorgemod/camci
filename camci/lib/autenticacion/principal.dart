@@ -48,7 +48,7 @@ Widget inicio(BuildContext context){
               color: Colors.amberAccent,
             ),
             FlatButton(
-              child: Text("registrarse"),
+              child: Text("Registrarse"),
               onPressed: (){
                 Navigator.pushReplacementNamed(context, "/singup");
               },
