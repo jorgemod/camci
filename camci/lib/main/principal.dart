@@ -42,7 +42,7 @@ class Principal extends StatelessWidget {
     AssetImage('imagenes/productos/pepinos3.png'),
     AssetImage('imagenes/productos/pimiento2.png'),
     AssetImage('imagenes/productos/pimientos1.png'),
-    AssetImage('imagenes/productos/pimientos3.png'),
+    AssetImage('imagenes/productos/pimientos3.jpg'),
     AssetImage('imagenes/productos/platanos1.png'),
     AssetImage('imagenes/productos/platanos2.png'),
     AssetImage('imagenes/productos/platanos3.png'),
@@ -56,8 +56,13 @@ class Principal extends StatelessWidget {
 
 
 
-  Widget itemsList() {
-    items(image1, image2),
+  List<Widget> itemsList() {
+    List<Widget> i = [];
+
+    for (var j = 0; j < imagenes.length; j+=2) {
+      i.add(items(imagenes[j], imagenes[j+1]));
+    }
+    return i;
 
   }
 
@@ -196,11 +201,7 @@ class Principal extends StatelessWidget {
             child: ListView(
               scrollDirection: Axis.vertical,
               shrinkWrap: true,
-              children: <Widget>[
-
-
-
-              ],
+              children: itemsList(),
             ),
           ),
           Container(
