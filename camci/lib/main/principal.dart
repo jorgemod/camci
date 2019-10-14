@@ -2,56 +2,58 @@ import 'package:flutter/material.dart';
 import 'cart.dart';
 
 class Principal extends StatelessWidget {
+  var seleccionados = [];
+
   var precios = [
-    "Aguacate\n\$45",
-    "\$40",
-    "\$47",
-    "\$46",
-    "\$40",
-    "\$35",
-    "\$45",
-    "\$44",
-    "\$44.5",
-    "\$90",
-    "\$85",
-    "\$80",
-    "\$95",
-    "\$88",
-    "\$12",
-    "\$15",
-    "\$15",
-    "\$13",
-    "\$18",
-    "\$18",
-    "\$20",
-    "\$15",
-    "\$18",
-    "\$14",
-    "\$40",
-    "\$45",
-    "\$30",
-    "\$38",
-    "\$10",
-    "\$12",
-    "\$15",
-    "\$15",
-    "\$10",
-    "\$15",
-    "\$18",
-    "\$20",
-    "\$45",
-    "\$40",
-    "\$43",
-    "\$12",
-    "\$15",
-    "\$17",
-    "\$16",
-    "\$9",
-    "\$10",
-    "\$10",
-    "\$12",
-    "\$15",
-    "\$13",
+    "aguacate\n\$45",
+    "aguacate\n\$40",
+    "aguacate\n\$47",
+    "aguacate\n\$46",
+    "durazno\n\$40",
+    "durazno\n\$35",
+    "durazno\n\$45",
+    "durazno\n\$44",
+    "durazno\n\$44.5",
+    "fresa\n\$90",
+    "fresa\n\$85",
+    "fresa\n\$80",
+    "fresa\n\$95",
+    "fresa\n\$88",
+    "jitomate\n\$12",
+    "jitomate\n\$15",
+    "lechuga\n\$15",
+    "lechuga\n\$13",
+    "lechuga\n\$18",
+    "lechuga\n\$18",
+    "limon\n\$20",
+    "limon\n\$15",
+    "limon\n\$18",
+    "limon\n\$14",
+    "manzana\n\$40",
+    "manzana\n\$45",
+    "manzana\n\$30",
+    "manzana\n\$38",
+    "naranjas\n\$10",
+    "naranjas\n\$12",
+    "naranjas\n\$15",
+    "papa\n\$15",
+    "papa\n\$10",
+    "pepino\n\$15",
+    "pepino\n\$18",
+    "pepino\n\$20",
+    "pimiento\n\$45",
+    "pimiento\n\$40",
+    "pimiento\n\$43",
+    "platanos\n\$12",
+    "platanos\n\$15",
+    "platanos\n\$17",
+    "platanos\n\$16",
+    "tomate\n\$9",
+    "tomate\n\$10",
+    "zanahorias\n\$10",
+    "zanahorias\n\$12",
+    "zanahorias\n\$15",
+    "zanahorias\n\$13",
   ];
 
   var imagenes = [
@@ -119,74 +121,76 @@ class Principal extends StatelessWidget {
 
 
   Widget items(AssetImage img1, String pr1, AssetImage img2, String pr2, int index) {
-    final precio1 = "10";
-    final precio2 = "30";
+    final item1 = InkWell(
+      child: Container(
+          decoration: new BoxDecoration(
+              color: Colors.white70,
+              borderRadius: new BorderRadius.all(
+                Radius.circular(8.0),
+              ),
+              boxShadow: <BoxShadow>[
+                new BoxShadow(
+                    color: Colors.black12,
+                    blurRadius: 10.0,
+                    offset: new Offset(0.0, 10.0))
+              ]),
+          height: 200,
+          width: 180,
+          child: Column(
+            children: <Widget>[
+              Container(
+                height: 140,
+                child: Image(image: img1),
+              ),
+              Text(pr1, style: TextStyle( fontSize: 18,),textAlign: TextAlign.center,),
+            ],
+          )),
+      onTap: () {
+        seleccionados.add(index);
+        print(index);
+      },
+    );
+    final item2 = InkWell(
+      child: Container(
+          decoration: new BoxDecoration(
+              color: Colors.white70,
+              borderRadius: new BorderRadius.all(
+                Radius.circular(8.0),
+              ),
+              boxShadow: <BoxShadow>[
+                new BoxShadow(
+                    color: Colors.black12,
+                    blurRadius: 10.0,
+                    offset: new Offset(0.0, 10.0))
+              ]),
+          height: 200,
+          width: 180,
+          child: Column(
+            children: <Widget>[
+              Container(
+                height: 140,
+                child: Image(image: img2),
+              ),
+              Text(pr2, style: TextStyle( fontSize: 18,),textAlign: TextAlign.center,),
+            ],
+          )),
+      onTap: () {
+        seleccionados.add(index+1);
 
-    final item1 = Container(
-        decoration: new BoxDecoration(
-            color: Colors.white70,
-            borderRadius: new BorderRadius.all(
-              Radius.circular(8.0),
-            ),
-            boxShadow: <BoxShadow>[
-              new BoxShadow(
-                  color: Colors.black12,
-                  blurRadius: 10.0,
-                  offset: new Offset(0.0, 10.0))
-            ]),
-        height: 200,
-        width: 180,
-        child: Column(
-          children: <Widget>[
-            Container(
-              height: 140,
-              child: Image(image: img1),
-            ),
-            Text(pr1, style: TextStyle( fontSize: 18,),textAlign: TextAlign.center,),
-          ],
-        ));
+        print(index+1);
+      },
+    );
 
-    final item2 = Container(
-        decoration: new BoxDecoration(
-            color: Colors.white70,
-            borderRadius: new BorderRadius.all(
-              Radius.circular(8.0),
-            ),
-            boxShadow: <BoxShadow>[
-              new BoxShadow(
-                  color: Colors.black12,
-                  blurRadius: 10.0,
-                  offset: new Offset(0.0, 10.0))
-            ]),
-        height: 200,
-        width: 180,
-        child: Column(
-          children: <Widget>[
-            Container(
-              height: 140,
-              child: Image(image: img2),
-            ),
-            Text(pr2, style: TextStyle( fontSize: 18), textAlign: TextAlign.center,),
-          ],
-        ));
+
 
     return Container(
       height: 220,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          InkWell(
-            child: item1,
-            onTap: () {
-              print("item1");
-            },
-          ),
-          InkWell(
-            child: item2,
-            onTap: () {
-              print("item2");
-            },
-          ),
+          item1,
+          item2,
+
         ],
       ),
     );
@@ -263,7 +267,7 @@ class Principal extends StatelessWidget {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Cart()),
+                      MaterialPageRoute(builder: (context) => Cart(seleccionados)),
                     );
                   },
                 )

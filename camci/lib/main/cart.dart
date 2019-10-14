@@ -3,11 +3,119 @@ import 'pasarela.dart';
 
 class Cart extends StatelessWidget {
 
+  var precios = [
+    "aguacate\n\$45",
+    "aguacate\n\$40",
+    "aguacate\n\$47",
+    "aguacate\n\$46",
+    "durazno\n\$40",
+    "durazno\n\$35",
+    "durazno\n\$45",
+    "durazno\n\$44",
+    "durazno\n\$44.5",
+    "fresa\n\$90",
+    "fresa\n\$85",
+    "fresa\n\$80",
+    "fresa\n\$95",
+    "fresa\n\$88",
+    "jitomate\n\$12",
+    "jitomate\n\$15",
+    "lechuga\n\$15",
+    "lechuga\n\$13",
+    "lechuga\n\$18",
+    "lechuga\n\$18",
+    "limon\n\$20",
+    "limon\n\$15",
+    "limon\n\$18",
+    "limon\n\$14",
+    "manzana\n\$40",
+    "manzana\n\$45",
+    "manzana\n\$30",
+    "manzana\n\$38",
+    "naranjas\n\$10",
+    "naranjas\n\$12",
+    "naranjas\n\$15",
+    "papa\n\$15",
+    "papa\n\$10",
+    "pepino\n\$15",
+    "pepino\n\$18",
+    "pepino\n\$20",
+    "pimiento\n\$45",
+    "pimiento\n\$40",
+    "pimiento\n\$43",
+    "platanos\n\$12",
+    "platanos\n\$15",
+    "platanos\n\$17",
+    "platanos\n\$16",
+    "tomate\n\$9",
+    "tomate\n\$10",
+    "zanahorias\n\$10",
+    "zanahorias\n\$12",
+    "zanahorias\n\$15",
+    "zanahorias\n\$13",
+  ];
+
+  var imagenes = [
+    AssetImage('imagenes/productos/aguacate1.png'),
+    AssetImage('imagenes/productos/aguacate2.png'),
+    AssetImage('imagenes/productos/aguacate3.png'),
+    AssetImage('imagenes/productos/aguacate4.png'),
+    AssetImage('imagenes/productos/durazno1.png'),
+    AssetImage('imagenes/productos/durazno2.png'),
+    AssetImage('imagenes/productos/durazno3.png'),
+    AssetImage('imagenes/productos/durazno4.png'),
+    AssetImage('imagenes/productos/durazno5.png'),
+    AssetImage('imagenes/productos/fresas1.png'),
+    AssetImage('imagenes/productos/fresas2.png'),
+    AssetImage('imagenes/productos/fresas3.png'),
+    AssetImage('imagenes/productos/fresas4.png'),
+    AssetImage('imagenes/productos/fresas5.png'),
+    AssetImage('imagenes/productos/jitomate1.png'),
+    AssetImage('imagenes/productos/jitomate2.png'),
+    AssetImage('imagenes/productos/lechuga1.png'),
+    AssetImage('imagenes/productos/lechuga2.png'),
+    AssetImage('imagenes/productos/lechuga3.png'),
+    AssetImage('imagenes/productos/lechuga4.png'),
+    AssetImage('imagenes/productos/limon1.png'),
+    AssetImage('imagenes/productos/limon3.png'),
+    AssetImage('imagenes/productos/limon4.png'),
+    AssetImage('imagenes/productos/limon5.png'),
+    AssetImage('imagenes/productos/manzana1.png'),
+    AssetImage('imagenes/productos/manzana2.png'),
+    AssetImage('imagenes/productos/manzana3.png'),
+    AssetImage('imagenes/productos/manzana4.png'),
+    AssetImage('imagenes/productos/naranjas1.png'),
+    AssetImage('imagenes/productos/naranjas2.png'),
+    AssetImage('imagenes/productos/naranjas3.png'),
+    AssetImage('imagenes/productos/papa1.png'),
+    AssetImage('imagenes/productos/papa2.png'),
+    AssetImage('imagenes/productos/pepinos1.png'),
+    AssetImage('imagenes/productos/pepinos2.png'),
+    AssetImage('imagenes/productos/pepinos3.png'),
+    AssetImage('imagenes/productos/pimiento2.png'),
+    AssetImage('imagenes/productos/pimientos1.png'),
+    AssetImage('imagenes/productos/pimientos3.jpg'),
+    AssetImage('imagenes/productos/platanos1.png'),
+    AssetImage('imagenes/productos/platanos2.png'),
+    AssetImage('imagenes/productos/platanos3.png'),
+    AssetImage('imagenes/productos/platanos4.png'),
+    AssetImage('imagenes/productos/tomate1.png'),
+    AssetImage('imagenes/productos/tomate2.png'),
+    AssetImage('imagenes/productos/zanahoria1.png'),
+    AssetImage('imagenes/productos/zanahoria2.png'),
+    AssetImage('imagenes/productos/zanahoria3.png'),
+  ];
+
+
   var empty = false;
 
   final image1 = new AssetImage('imagenes/productos/aguacate1.png');
 
-  Widget item() {
+  var seleccionados = [];
+
+  Cart(this.seleccionados);
+
+  Widget item(AssetImage image, String price) {
     return Container(
         margin: EdgeInsets.all(10),
         padding: EdgeInsets.all(10),
@@ -15,10 +123,9 @@ class Cart extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Image(image: image1),
-            Text("Desc 1"),
+            Image(image: image),
             Text(
-              "\$FF.00",
+              price,
               style: TextStyle(fontWeight: FontWeight.bold),
             )
           ],
@@ -46,6 +153,14 @@ class Cart extends StatelessWidget {
     );
   }
 
+  List<Widget> productos() {
+    List<Widget> s = [];
+    for (final p in seleccionados){
+      s.add(item(imagenes[p], precios[p]));
+    }
+    return s;
+  }
+
   Widget lleno(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -54,10 +169,7 @@ class Cart extends StatelessWidget {
           child: ListView(
             scrollDirection: Axis.vertical,
             shrinkWrap: true,
-            children: <Widget>[
-              item(),
-
-            ],
+            children: productos()
           ),
         ),
         InkWell(
@@ -96,12 +208,15 @@ class Cart extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => Pago()),
                 );
                 empty = true;
+                seleccionados = [];
               },
             ),
             new FlatButton(
-              child: new Text("Cancelar"),
+              child: new Text("Cancelar", style: TextStyle(fontSize: 20),),
               onPressed: () {
-                Navigator.of(context).pop();
+                print(seleccionados);
+                seleccionados = [];
+//                Navigator.of(context).pop();
               },
             ),
           ],
