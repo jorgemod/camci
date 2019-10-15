@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flare_flutter/flare_actor.dart';
 
 class Pago extends StatelessWidget {
 
@@ -8,12 +9,14 @@ class Pago extends StatelessWidget {
 
   final ef = new AssetImage('imagenes/pagos/money.png');
 
+
   Widget body(BuildContext context) {
     Widget method(String method, AssetImage img) {
       return InkWell(
         onTap: () {
           Navigator.of(context).pop();
           Navigator.of(context).pop();
+
         },
         child: Container(
           margin: EdgeInsets.all(10),

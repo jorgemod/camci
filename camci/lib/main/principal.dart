@@ -5,55 +5,55 @@ class Principal extends StatelessWidget {
   var seleccionados = [];
 
   var precios = [
-    "aguacate\n\$45",
-    "aguacate\n\$40",
-    "aguacate\n\$47",
-    "aguacate\n\$46",
-    "durazno\n\$40",
-    "durazno\n\$35",
-    "durazno\n\$45",
-    "durazno\n\$44",
-    "durazno\n\$44.5",
-    "fresa\n\$90",
-    "fresa\n\$85",
-    "fresa\n\$80",
-    "fresa\n\$95",
-    "fresa\n\$88",
-    "jitomate\n\$12",
-    "jitomate\n\$15",
-    "lechuga\n\$15",
-    "lechuga\n\$13",
-    "lechuga\n\$18",
-    "lechuga\n\$18",
-    "limon\n\$20",
-    "limon\n\$15",
-    "limon\n\$18",
-    "limon\n\$14",
-    "manzana\n\$40",
-    "manzana\n\$45",
-    "manzana\n\$30",
-    "manzana\n\$38",
-    "naranjas\n\$10",
-    "naranjas\n\$12",
-    "naranjas\n\$15",
-    "papa\n\$15",
-    "papa\n\$10",
-    "pepino\n\$15",
-    "pepino\n\$18",
-    "pepino\n\$20",
-    "pimiento\n\$45",
-    "pimiento\n\$40",
-    "pimiento\n\$43",
-    "platanos\n\$12",
-    "platanos\n\$15",
-    "platanos\n\$17",
-    "platanos\n\$16",
-    "tomate\n\$9",
-    "tomate\n\$10",
-    "zanahorias\n\$10",
-    "zanahorias\n\$12",
-    "zanahorias\n\$15",
-    "zanahorias\n\$13",
+    "aguacate\nCalidad alta\n\$45",
+    "aguacate\nCalidad media\n\$40",
+    "aguacate\nCalidad normal\n\$47",
+    "aguacate\nCalidad alta\n\$46",
+    "durazno\nCalidad normal\n\$40",
+    "durazno\nCalidad alta\n\$35",
+    "durazno\nCalidad media\n\$45",
+    "durazno\nCalidad media\n\$44",
+    "durazno\nCalidad alta\n\$44.5",
+    "fresa\nCalidad alta\n\$90",
+    "fresa\nCalidad media\n\$85",
+    "fresa\nCalidad media\n\$80",
+    "fresa\nCalidad alta\n\$95",
+    "fresa\nCalidad alta\n\$88",
+    "jitomate\nCalidad media\n\$12",
+    "jitomate\nCalidad normal\n\$15",
+    "lechuga\nCalidad normal\n\$15",
+    "lechuga\nCalidad alta\n\$13",
+    "lechuga\nCalidad media\n\$18",
+    "lechuga\nCalidad alta\n\$18",
+    "limon\nCalidad normal\n\$20",
+    "limon\nCalidad normal\n\$15",
+    "limon\nCalidad alta\n\$18",
+    "limon\nCalidad media\n\$14",
+    "manzana\nCalidad alta\n\$40",
+    "manzana\nCalidad normal\n\$45",
+    "manzana\nCalidad media\n\$30",
+    "manzana\nCalidad alta\n\$38",
+    "naranjas\nCalidad media\n\$10",
+    "naranjas\nCalidad normal\n\$12",
+    "naranjas\nCalidad media\n\$15",
+    "papa\nCalidad alta\n\$15",
+    "papa\nCalidad alta\n\$10",
+    "pepino\nCalidad media\n\$15",
+    "pepino\nCalidad normal\n\$18",
+    "pepino\nCalidad alta\n\$20",
+    "pimiento\nCalidad alta\n\$45",
+    "pimiento\nCalidad media\n\$40",
+    "pimiento\nCalidad normal\n\$43",
+    "platanos\nCalidad alta\n\$12",
+    "platanos\nCalidad alta\n\$15",
+    "platanos\nCalidad media\n\$17",
+    "platanos\nCalidad normal\n\$16",
+    "tomate\nCalidad alta\n\$9",
+    "tomate\nCalidad media\n\$10",
+    "zanahorias\nCalidad normal\n\$10",
+    "zanahorias\nCalidad alta\n\$12",
+    "zanahorias\nCalidad media\n\$15",
+    "zanahorias\nCalidad normal\n\$13",
   ];
 
   var imagenes = [
@@ -107,20 +107,17 @@ class Principal extends StatelessWidget {
     AssetImage('imagenes/productos/zanahoria3.png'),
   ];
 
-
-
   List<Widget> itemsList() {
     List<Widget> i = [];
 
-    for (var j = 0; j < imagenes.length; j+=2) {
-      i.add(items(imagenes[j], precios[j], imagenes[j+1], precios[j+1], j));
+    for (var j = 0; j < imagenes.length; j += 2) {
+      i.add(items(imagenes[j], precios[j], imagenes[j + 1], precios[j + 1], j));
     }
     return i;
-
   }
 
-
-  Widget items(AssetImage img1, String pr1, AssetImage img2, String pr2, int index) {
+  Widget items(
+      AssetImage img1, String pr1, AssetImage img2, String pr2, int index) {
     final item1 = InkWell(
       child: Container(
           decoration: new BoxDecoration(
@@ -134,15 +131,21 @@ class Principal extends StatelessWidget {
                     blurRadius: 10.0,
                     offset: new Offset(0.0, 10.0))
               ]),
-          height: 200,
-          width: 180,
+          height: 215,
+          width: 170,
           child: Column(
             children: <Widget>[
               Container(
                 height: 140,
                 child: Image(image: img1),
               ),
-              Text(pr1, style: TextStyle( fontSize: 18,),textAlign: TextAlign.center,),
+              Text(
+                pr1,
+                style: TextStyle(
+                  fontSize: 18,
+                ),
+                textAlign: TextAlign.center,
+              ),
             ],
           )),
       onTap: () {
@@ -163,36 +166,72 @@ class Principal extends StatelessWidget {
                     blurRadius: 10.0,
                     offset: new Offset(0.0, 10.0))
               ]),
-          height: 200,
-          width: 180,
+          height: 215,
+          width: 170,
           child: Column(
             children: <Widget>[
               Container(
                 height: 140,
                 child: Image(image: img2),
               ),
-              Text(pr2, style: TextStyle( fontSize: 18,),textAlign: TextAlign.center,),
+              Text(
+                pr2,
+                style: TextStyle(
+                  fontSize: 18,
+                ),
+                textAlign: TextAlign.center,
+              ),
             ],
           )),
       onTap: () {
-        seleccionados.add(index+1);
+        seleccionados.add(index + 1);
 
-        print(index+1);
+        print(index + 1);
       },
     );
 
-
-
     return Container(
-      height: 220,
+      height: 230,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           item1,
           item2,
-
         ],
       ),
+    );
+  }
+
+  Future sleep1() {
+    return new Future.delayed(const Duration(seconds: 1), () {
+      return "1";
+    });
+  }
+
+  void _showDialog(BuildContext context) {
+    // flutter defined function
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        // return object of type Dialog
+        return AlertDialog(
+          title: new Text("No hay articulos en el carrito"),
+          content: new Text(";("),
+          actions: <Widget>[
+            // usually buttons at the bottom of the dialog
+            new FlatButton(
+              child: new Text(
+                "Aceptar",
+                style: TextStyle(fontSize: 18),
+              ),
+              onPressed: () {
+                Navigator.of(context).pop();
+//               Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
     );
   }
 
@@ -265,11 +304,16 @@ class Principal extends StatelessWidget {
                 InkWell(
                   child: Icon(Icons.shopping_cart),
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Cart(seleccionados)),
-                    );
-                    seleccionados = [];
+                    var res = seleccionados;
+                    if (res.isEmpty) {
+                      _showDialog(context);
+                    } else {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Cart(res)),
+                      );
+                      seleccionados = [];
+                    }
                   },
                 )
               ],

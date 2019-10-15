@@ -41,7 +41,7 @@ class Signin extends StatelessWidget{
   Widget boton(AssetImage img, String str, BuildContext context){
     return InkWell(
       child: Container(
-        height: 50,
+        height: 49,
         margin: EdgeInsets.all(10),
         padding: EdgeInsets.all(15),
         child: Row(
@@ -105,9 +105,7 @@ class Signin extends StatelessWidget{
                   Navigator.pushReplacementNamed(context, "/main");
                 },
               ),
-              SizedBox(
-                height: 70,
-              ),
+
               boton(fb, "Facebook", context),
               boton(gl, "Google", context),
 

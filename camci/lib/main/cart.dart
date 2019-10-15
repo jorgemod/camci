@@ -1,58 +1,64 @@
 import 'package:flutter/material.dart';
 import 'pasarela.dart';
+import 'package:flare_flutter/flare_actor.dart';
 
 class Cart extends StatelessWidget {
 
+  var seleccionados = [];
+  var suma  = 0.0;
+
+  Cart(this.seleccionados);
+
   var precios = [
-    "aguacate\n\$45",
-    "aguacate\n\$40",
-    "aguacate\n\$47",
-    "aguacate\n\$46",
-    "durazno\n\$40",
-    "durazno\n\$35",
-    "durazno\n\$45",
-    "durazno\n\$44",
-    "durazno\n\$44.5",
-    "fresa\n\$90",
-    "fresa\n\$85",
-    "fresa\n\$80",
-    "fresa\n\$95",
-    "fresa\n\$88",
-    "jitomate\n\$12",
-    "jitomate\n\$15",
-    "lechuga\n\$15",
-    "lechuga\n\$13",
-    "lechuga\n\$18",
-    "lechuga\n\$18",
-    "limon\n\$20",
-    "limon\n\$15",
-    "limon\n\$18",
-    "limon\n\$14",
-    "manzana\n\$40",
-    "manzana\n\$45",
-    "manzana\n\$30",
-    "manzana\n\$38",
-    "naranjas\n\$10",
-    "naranjas\n\$12",
-    "naranjas\n\$15",
-    "papa\n\$15",
-    "papa\n\$10",
-    "pepino\n\$15",
-    "pepino\n\$18",
-    "pepino\n\$20",
-    "pimiento\n\$45",
-    "pimiento\n\$40",
-    "pimiento\n\$43",
-    "platanos\n\$12",
-    "platanos\n\$15",
-    "platanos\n\$17",
-    "platanos\n\$16",
-    "tomate\n\$9",
-    "tomate\n\$10",
-    "zanahorias\n\$10",
-    "zanahorias\n\$12",
-    "zanahorias\n\$15",
-    "zanahorias\n\$13",
+    "aguacate\nCalidad alta\n\$45",
+    "aguacate\nCalidad media\n\$40",
+    "aguacate\nCalidad normal\n\$47",
+    "aguacate\nCalidad alta\n\$46",
+    "durazno\nCalidad normal\n\$40",
+    "durazno\nCalidad alta\n\$35",
+    "durazno\nCalidad media\n\$45",
+    "durazno\nCalidad media\n\$44",
+    "durazno\nCalidad alta\n\$44.5",
+    "fresa\nCalidad alta\n\$90",
+    "fresa\nCalidad media\n\$85",
+    "fresa\nCalidad media\n\$80",
+    "fresa\nCalidad alta\n\$95",
+    "fresa\nCalidad alta\n\$88",
+    "jitomate\nCalidad media\n\$12",
+    "jitomate\nCalidad normal\n\$15",
+    "lechuga\nCalidad normal\n\$15",
+    "lechuga\nCalidad alta\n\$13",
+    "lechuga\nCalidad media\n\$18",
+    "lechuga\nCalidad alta\n\$18",
+    "limon\nCalidad normal\n\$20",
+    "limon\nCalidad normal\n\$15",
+    "limon\nCalidad alta\n\$18",
+    "limon\nCalidad media\n\$14",
+    "manzana\nCalidad alta\n\$40",
+    "manzana\nCalidad normal\n\$45",
+    "manzana\nCalidad media\n\$30",
+    "manzana\nCalidad alta\n\$38",
+    "naranjas\nCalidad media\n\$10",
+    "naranjas\nCalidad normal\n\$12",
+    "naranjas\nCalidad media\n\$15",
+    "papa\nCalidad alta\n\$15",
+    "papa\nCalidad alta\n\$10",
+    "pepino\nCalidad media\n\$15",
+    "pepino\nCalidad normal\n\$18",
+    "pepino\nCalidad alta\n\$20",
+    "pimiento\nCalidad alta\n\$45",
+    "pimiento\nCalidad media\n\$40",
+    "pimiento\nCalidad normal\n\$43",
+    "platanos\nCalidad alta\n\$12",
+    "platanos\nCalidad alta\n\$15",
+    "platanos\nCalidad media\n\$17",
+    "platanos\nCalidad normal\n\$16",
+    "tomate\nCalidad alta\n\$9",
+    "tomate\nCalidad media\n\$10",
+    "zanahorias\nCalidad normal\n\$10",
+    "zanahorias\nCalidad alta\n\$12",
+    "zanahorias\nCalidad media\n\$15",
+    "zanahorias\nCalidad normal\n\$13",
   ];
 
   var imagenes = [
@@ -107,17 +113,13 @@ class Cart extends StatelessWidget {
   ];
 
 
-  var empty = false;
-
   final image1 = new AssetImage('imagenes/productos/aguacate1.png');
 
-  var seleccionados = [];
 
-  Cart(this.seleccionados);
 
   Widget item(AssetImage image, String price) {
     return Container(
-        margin: EdgeInsets.all(10),
+        margin: EdgeInsets.only(left: 20, right: 20, bottom: 10),
         padding: EdgeInsets.all(10),
         height: 150,
         child: Row(
@@ -141,12 +143,41 @@ class Cart extends StatelessWidget {
             ]));
   }
 
+  Widget total(){
+    for (final x in seleccionados){
+      var split = precios[x].split('\$');
+      suma += double.parse(split[1]);
+    }
+    return Container(
+      height: 20,
+      child: Center(
+        child: Text("Total \$" + suma.toString(), style: TextStyle(fontSize: 20),),
+      ),
+    );
+  }
+
   Widget vacio() {
     return Container(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[Text("Carrito vacio")],
+        children: <Widget>[
+          succes()
+        ],
+      ),
+      height: double.maxFinite,
+      width: double.maxFinite,
+    );
+  }
+
+  Widget em() {
+    return Container(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Text("Carrito vacio")
+        ],
       ),
       height: double.maxFinite,
       width: double.maxFinite,
@@ -158,6 +189,7 @@ class Cart extends StatelessWidget {
     for (final p in seleccionados){
       s.add(item(imagenes[p], precios[p]));
     }
+    s.add(total());
     return s;
   }
 
@@ -167,6 +199,7 @@ class Cart extends StatelessWidget {
       children: <Widget>[
         Flexible(
           child: ListView(
+            padding: EdgeInsets.only(top: 20),
             scrollDirection: Axis.vertical,
             shrinkWrap: true,
             children: productos()
@@ -174,11 +207,11 @@ class Cart extends StatelessWidget {
         ),
         InkWell(
           child: Container(
-            color: Colors.white70,
-            height: 60,
+            color: Colors.green,
+            height: 80,
             padding: EdgeInsets.only(bottom: 20),
             child: Center(
-              child: Text("Pagar"),
+              child: Text("Pagar", style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold, color: Colors.white), ),
             ),
           ),
           onTap: () {
@@ -196,25 +229,23 @@ class Cart extends StatelessWidget {
       builder: (BuildContext context) {
         // return object of type Dialog
         return AlertDialog(
-          title: new Text("Pagara:"),
-          content: new Text("123.123"),
+          title: new Text("Total a pagar:"),
+          content: new Text("\$"+ suma.toString()),
           actions: <Widget>[
             // usually buttons at the bottom of the dialog
             new FlatButton(
-              child: new Text("Pagar", style: TextStyle(fontSize: 20),),
+              child: new Text("Pagar", style: TextStyle(fontSize: 18),),
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => Pago()),
                 );
-                empty = true;
                 seleccionados = [];
               },
             ),
             new FlatButton(
-              child: new Text("Cancelar", style: TextStyle(fontSize: 20),),
+              child: new Text("Cancelar", style: TextStyle(fontSize: 18),),
               onPressed: () {
-                print(seleccionados);
                 seleccionados = [];
 //                Navigator.of(context).pop();
               },
@@ -225,9 +256,24 @@ class Cart extends StatelessWidget {
     );
   }
 
+  Widget succes() {
+    return Center(
+      child: Container(
+        height: 300,
+        width: 300,
+        child: new FlareActor("anim/succes.flr",
+            alignment: Alignment.center,
+            fit: BoxFit.fill,
+            animation: "Wait",
+
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    if (!empty) {
+    if (seleccionados.isNotEmpty) {
       return Scaffold(
         appBar: AppBar(
           title: Text("Carrito"),
@@ -237,7 +283,7 @@ class Cart extends StatelessWidget {
     } else {
       return Scaffold(
         appBar: AppBar(
-          title: Text("Carrito"),
+          title: Text("Pagado"),
         ),
         body: vacio(),
       );
