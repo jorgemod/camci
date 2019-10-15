@@ -269,6 +269,7 @@ class Principal extends StatelessWidget {
                       context,
                       MaterialPageRoute(builder: (context) => Cart(seleccionados)),
                     );
+                    seleccionados = [];
                   },
                 )
               ],
