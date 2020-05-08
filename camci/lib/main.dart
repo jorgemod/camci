@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Camci',
+      title: 'Galene Company',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
 

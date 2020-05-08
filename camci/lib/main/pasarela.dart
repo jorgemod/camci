@@ -54,9 +54,9 @@ class Pago extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          method("Efectivo", ef),
+          method("cash", ef),
           method("PayPal", pp),
-          method("Tarjeta", cc),
+          method("Card", cc),
         ],
       ),
     );
@@ -66,7 +66,7 @@ class Pago extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Pago"),
+        title: Text("PAYMENT METHOD"),
       ),
       body: body(context),
     );

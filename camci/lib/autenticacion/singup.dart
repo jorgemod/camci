@@ -15,23 +15,23 @@ class Singup extends StatelessWidget {
         children: <Widget>[
           logo(),
           TextField(
-            decoration: InputDecoration(hintText: "nombre"),
+            decoration: InputDecoration(hintText: "Name"),
           ),
           TextField(
-            decoration: InputDecoration(hintText: "Correo"),
+            decoration: InputDecoration(hintText: "E-mail"),
           ),
           TextField(
-            decoration: InputDecoration(hintText: "Número de celular"),
+            decoration: InputDecoration(hintText: "Phone number"),
           ),
           TextField(
-            decoration: InputDecoration(hintText: "Dirección"),
+            decoration: InputDecoration(hintText: "Address"),
           ),
           SizedBox(
             height: 70,
           ),
 
           CheckboxListTile(
-            title: Text("¿Acepta terminos y condiciones?"),
+            title: Text("Do you accept terms and conditions?"),
             value: true,
 
             onChanged: (bool val) {},
@@ -39,7 +39,7 @@ class Singup extends StatelessWidget {
           ),
 
           FlatButton(
-            child: Text("Registrarse"),
+            child: Text("Send"),
             color: Colors.amberAccent,
             onPressed: () {
               Navigator.pushReplacementNamed(context, "/principal");
@@ -52,8 +52,8 @@ class Singup extends StatelessWidget {
   }
 
   Widget logo() {
-    var assetsImage = new AssetImage('imagenes/logo.png');
-    var image = new Image(image: assetsImage,width: 80.0,height: 80.0,);
+    var assetsImage = new AssetImage('imagenes/newlogo.png');
+    var image = new Image(image: assetsImage,width: 170.0,height: 170.0,);
     return Container(
         child: Center(
           child: image,

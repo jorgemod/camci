@@ -15,8 +15,8 @@ class Signin extends StatelessWidget{
 
   }
   Widget logo() {
-    var assetsImage = new AssetImage('imagenes/logo.png');
-    var image = new Image(image: assetsImage,width: 80.0,height: 80.0,);
+    var assetsImage = new AssetImage('imagenes/newlogo.png');
+    var image = new Image(image: assetsImage,width: 170.0,height: 170.0,);
     return Container(
         child: Center(
           child: image,
@@ -47,7 +47,7 @@ class Signin extends StatelessWidget{
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            Text("Iniciar con "+ str),
+            Text("Start with "+ str),
             Image(image: img,)
           ],
         ),
@@ -88,18 +88,18 @@ class Signin extends StatelessWidget{
             children: <Widget>[
               logo(),
               FlatButton(
-                child: Text("CAMCI"),
+                child: Text("Galene Company"),
                 color: Colors.white,
               ),
               TextField(
                 decoration: InputDecoration(hintText: "Email"),
               ),
               TextField(
-                decoration: InputDecoration(hintText: "Contraseña"),
+                decoration: InputDecoration(hintText: "Password"),
                 obscureText: true,
               ),
               FlatButton(
-                child: Text("Iniciar Sesión"),
+                child: Text("Sign in"),
                 color:Colors.amberAccent,
                 onPressed: (){
                   Navigator.pushReplacementNamed(context, "/main");

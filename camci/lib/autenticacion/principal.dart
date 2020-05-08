@@ -41,14 +41,14 @@ Widget inicio(BuildContext context){
           children: <Widget>[
             logo(),
             FlatButton(
-              child: Text("Iniciar Sesión"),
+              child: Text("Sign in"),
               onPressed: (){
                 Navigator.pushReplacementNamed(context, "/singin");
                 },
               color: Colors.amberAccent,
             ),
             FlatButton(
-              child: Text("Registrarse"),
+              child: Text("Sing up"),
               onPressed: (){
                 Navigator.pushReplacementNamed(context, "/singup");
               },
@@ -65,8 +65,8 @@ Widget inicio(BuildContext context){
 }
 
 Widget logo() {
-  var assetsImage = new AssetImage('imagenes/logo.png');
-  var image = new Image(image: assetsImage,width: 80.0,height: 80.0,);
+  var assetsImage = new AssetImage('imagenes/newlogo.png');
+  var image = new Image(image: assetsImage,width: 170.0,height: 170.0,);
   return Container(
       child: Center(
         child: image,

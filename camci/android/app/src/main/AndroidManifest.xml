@@ -8,8 +8,8 @@
          FlutterApplication and put your custom class here. -->
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="camci"
-        android:icon="@drawable/harvest">
+        android:label="Galene"
+        android:icon="@drawable/newlogo">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
